@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Conteúdo - Janeiro 2026 | Músculos e Corpo Definido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #151b3f;
+            --bg-card: #1a2142;
+            --bg-hover: #222952;
+            --accent-primary: #d32f2f;
+            --accent-secondary: #b71c1c;
+            --accent-blue: #1976d2;
+            --accent-purple: #7b1fa2;
+            --accent-green: #388e3c;
+            --accent-orange: #e64a19;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b2d1;
+            --text-muted: #6b7a99;
+            --border: rgba(168, 178, 209, 0.1);
+            --shadow: rgba(0, 0, 0, 0.3);
+            
+            /* Tema claro */
+            --light-bg-primary: #f5f5f5;
+            --light-bg-secondary: #ffffff;
+            --light-bg-card: #ffffff;
+            --light-bg-hover: #f1f3f5;
+            --light-text-primary: #1a202c;
+            --light-text-secondary: #4a5568;
+            --light-text-muted: #718096;
+            --light-border: rgba(0, 0, 0, 0.08);
+            --light-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: var(--light-bg-primary);
+            --bg-secondary: var(--light-bg-secondary);
+            --bg-card: var(--light-bg-card);
+            --bg-hover: var(--light-bg-hover);
+            --text-primary: var(--light-text-primary);
+            --text-secondary: var(--light-text-secondary);
+            --text-muted: var(--light-text-muted);
+            --border: var(--light-border);
+            --shadow: var(--light-shadow);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Background decorativo */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(25, 118, 210, 0.08) 0%, transparent 50%);
+            animation: rotate 60s linear infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-secondary);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .logo-mcd {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
+
+        .header-left h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+
+        .header-left p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .progress-badge span {
+            color: var(--accent-primary);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            padding: 0.625rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .theme-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: none;
+        }
+
+        /* Filtros */
+        .filters {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+        }
+
+        select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a8b2d1' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        /* Grid de calendário */
+        .calendar-grid {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .day-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--theme-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px var(--shadow);
+            border-color: var(--theme-color);
+        }
+
+        .day-card:hover::before {
+            opacity: 1;
+        }
+
+        .day-card.pernas { --theme-color: #1976d2; }
+        .day-card.gluteos { --theme-color: #d32f2f; }
+        .day-card.abdominais { --theme-color: #388e3c; }
+        .day-card.hiit { --theme-color: #e64a19; }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .date-badge {
+            background: var(--theme-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .status-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .status-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .tema-badge {
+            display: inline-block;
+            background: var(--theme-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-details {
+            width: 100%;
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 0.625rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .btn-details:hover {
+            background: var(--theme-color);
+            color: white;
+            border-color: var(--theme-color);
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 60px var(--shadow);
+            animation: slideUp 0.4s ease;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--theme-color), var(--theme-color-dark, var(--theme-color)));
+            padding: 2rem;
+            color: white;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .modal-header h2 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            opacity: 0.95;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--theme-color);
+            border-radius: 2px;
+        }
+
+        .reference-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .reference-card:hover {
+            border-color: var(--theme-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-type {
+            background: var(--theme-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .reference-id {
+            font-family: 'Lexend', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .reference-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .reference-metrics {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-study {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .reference-link:hover {
+            color: var(--accent-secondary);
+            gap: 0.75rem;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .checklist li:hover {
+            background: var(--bg-hover);
+        }
+
+        .checklist input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--theme-color);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist li.checked {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+
+        .info-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--theme-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .info-box strong {
+            display: block;
+            color: var(--theme-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-copy {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+
+        .btn-copy:hover {
+            background: var(--theme-color);
+            color: white;
+            border-color: var(--theme-color);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            bottom: 0;
+            width: 400px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            box-shadow: -10px 0 40px var(--shadow);
+            z-index: 3000;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            padding: 2rem;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-header h2 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .reference-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .reference-item:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-right {
+                justify-content: space-between;
+            }
+
+            .calendar-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .filters {
+                padding: 0 1rem;
+            }
+
+            .sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem;
+            }
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+
+        .loading::after {
+            content: '⏳';
+            font-size: 3rem;
+            animation: pulse 1.5s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        /* Tooltip */
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.75rem;
+            z-index: 1000;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-hover);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <svg class="logo-mcd" viewBox="0 0 276 276" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Círculo externo vermelho -->
+                    <circle cx="138" cy="138" r="130" fill="none" stroke="#b71c1c" stroke-width="16"/>
+                    
+                    <!-- Escudo -->
+                    <path d="M138 40 L90 80 L90 180 C90 220 110 240 138 250 C166 240 186 220 186 180 L186 80 Z" 
+                          fill="#c4a574" stroke="#2c2416" stroke-width="3"/>
+                    
+                    <!-- Olhos -->
+                    <ellipse cx="110" cy="120" rx="15" ry="25" fill="#000"/>
+                    <ellipse cx="166" cy="120" rx="15" ry="25" fill="#000"/>
+                    
+                    <!-- Corpo muscular vermelho -->
+                    <path d="M70 80 C60 100, 60 120, 70 140 L90 160 L90 100 Z" fill="#b71c1c"/>
+                    <path d="M206 80 C216 100, 216 120, 206 140 L186 160 L186 100 Z" fill="#b71c1c"/>
+                    <ellipse cx="138" cy="60" rx="35" ry="40" fill="#b71c1c"/>
+                    
+                    <!-- Peitorais -->
+                    <ellipse cx="115" cy="110" rx="25" ry="30" fill="#b71c1c"/>
+                    <ellipse cx="161" cy="110" rx="25" ry="30" fill="#b71c1c"/>
+                    
+                    <!-- Ampulheta no meio -->
+                    <path d="M138 100 L125 130 L125 160 L138 190 L151 160 L151 130 Z" 
+                          fill="#f4c89e" stroke="#b71c1c" stroke-width="4"/>
+                    <path d="M125 130 L151 130 L138 145 Z" fill="#d4a574"/>
+                    <path d="M125 160 L151 160 L138 145 Z" fill="#b8865a"/>
+                    
+                    <!-- Texto MCD -->
+                    <text x="138" y="125" font-family="Arial Black, sans-serif" font-size="28" 
+                          font-weight="bold" fill="#f4c89e" text-anchor="middle">MCD</text>
+                </svg>
+                <div>
+                    <h1>📅 Calendário de Conteúdo - Janeiro 2026</h1>
+                    <p>Canal: Músculos e Corpo Definido</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="progress-badge">
+                    <span id="progress-count">0</span> de 18 vídeos
+                </div>
+                <button onclick="openAnalysis()">📊 Ver Análise</button>
+                <button onclick="openSidebar()" data-tooltip="Referências">📚</button>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filtros -->
+    <div class="filters">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Buscar por título..." oninput="filterCards()">
+        </div>
+        <select id="filter-tema" onchange="filterCards()">
+            <option value="">Todos os Temas</option>
+            <option value="pernas">🟦 Pernas</option>
+            <option value="gluteos">🟪 Glúteos</option>
+            <option value="abdominais">🟩 Abdominais</option>
+            <option value="hiit">🟥 HIIT/Combo</option>
+        </select>
+        <select id="filter-status" onchange="filterCards()">
+            <option value="">Todos os Status</option>
+            <option value="nao-iniciado">☐ Não Iniciado</option>
+            <option value="producao">📝 Em Produção</option>
+            <option value="publicado">✅ Publicado</option>
+        </select>
+    </div>
+
+    <!-- Grid de Calendário -->
+    <div class="calendar-grid" id="calendar-grid">
+        <!-- Cards serão inseridos aqui via JavaScript -->
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div class="modal" id="modal-details">
+        <div class="modal-content">
+            <!-- Conteúdo será inserido via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal de Análise -->
+    <div class="modal" id="modal-analysis">
+        <div class="modal-content">
+            <div class="modal-header" style="--theme-color: var(--accent-primary);">
+                <button class="modal-close" onclick="closeModal('modal-analysis')">×</button>
+                <h2>📊 Análise Completa - Base dos 365 Dias</h2>
+            </div>
+            <div class="modal-body">
+                <div class="section">
+                    <div class="section-title">💰 Resultados Anuais</div>
+                    <div class="info-box" style="--theme-color: var(--accent-primary);">
+                        <p style="font-size: 1.125rem; margin-bottom: 1rem;">
+                            <strong>23M</strong> visualizações • 
+                            <strong>122k</strong> inscritos • 
+                            <strong>R$ 122k</strong> em receita
+                        </p>
+                        <p><strong>Taxa média:</strong> 52.98 inscritos por 10k views</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🏆 Seus Maiores Sucessos</div>
+                    <div class="reference-card" style="--theme-color: var(--accent-primary);">
+                        <div class="reference-header">
+                            <span class="reference-type">1.5M VIEWS</span>
+                            <span class="reference-id">tVQDe1YxihE</span>
+                        </div>
+                        <div class="reference-title">Como Perder Barriga e Ganhar Pernas e Glúteos em 7 Dias</div>
+                        <div class="reference-metrics">82.69/10k • CTR 12.01% • SEU MAIOR VIRAL!</div>
+                        <a href="https://studio.youtube.com/video/tVQDe1YxihE/analytics" target="_blank" class="reference-link">
+                            Ver no YouTube Studio →
+                        </a>
+                    </div>
+
+                    <div class="reference-card" style="--theme-color: var(--accent-purple);">
+                        <div class="reference-header">
+                            <span class="reference-type">1.1M VIEWS</span>
+                            <span class="reference-id">45BYCOv9GRs</span>
+                        </div>
+                        <div class="reference-title">9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES em Casa! 🍑</div>
+                        <div class="reference-metrics">111.78/10k • CTR 11.13% • Glúteos campeão</div>
+                        <a href="https://studio.youtube.com/video/45BYCOv9GRs/analytics" target="_blank" class="reference-link">
+                            Ver no YouTube Studio →
+                        </a>
+                    </div>
+
+                    <div class="reference-card" style="--theme-color: var(--accent-green);">
+                        <div class="reference-header">
+                            <span class="reference-type">1M VIEWS</span>
+                            <span class="reference-id">oAh1MT_z4rQ</span>
+                        </div>
+                        <div class="reference-title">10 ABDOMINAIS EM PÉ para Perder Barriga em 7 Dias</div>
+                        <div class="reference-metrics">105.73/10k • 44.9% retenção • Abdominais lendário</div>
+                        <a href="https://studio.youtube.com/video/oAh1MT_z4rQ/analytics" target="_blank" class="reference-link">
+                            Ver no YouTube Studio →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">💎 Melhores Conversões</div>
+                    <div class="info-box" style="--theme-color: var(--accent-blue);">
+                        <strong>Pernas: 32.65/10k</strong> (MELHOR TEMA!)
+                        <p style="margin-top: 0.5rem;">ID: CeEEU2N8xFk - 128.26/10k (Recorde absoluto!)</p>
+                        <a href="https://studio.youtube.com/video/CeEEU2N8xFk/analytics" target="_blank" class="reference-link" style="margin-top: 0.5rem;">
+                            Ver vídeo campeão →
+                        </a>
+                    </div>
+                    <div class="info-box" style="--theme-color: var(--accent-orange);">
+                        <strong>Melhor CTR: 14.24%</strong>
+                        <p style="margin-top: 0.5rem;">ID: EIwndVX7DlY - Thumbnail perfeita!</p>
+                        <a href="https://studio.youtube.com/video/EIwndVX7DlY/analytics" target="_blank" class="reference-link" style="margin-top: 0.5rem;">
+                            Ver vídeo →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🔥 Formato Secreto</div>
+                    <div class="info-box" style="--theme-color: var(--accent-primary);">
+                        <strong>"FAÇA ISSO" = 49.1% retenção média</strong>
+                        <p style="margin-top: 0.5rem;">Alguns vídeos chegaram a 241% de retenção (rewatches insanos!)</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">📈 Distribuição Janeiro 2026</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="info-box" style="--theme-color: var(--accent-blue);">
+                            <strong>Pernas</strong>
+                            <p>4 vídeos (24%)</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.25rem;">MELHOR conversão</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-purple);">
+                            <strong>Glúteos</strong>
+                            <p>9 vídeos (52%)</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.25rem;">MAIOR demanda</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-green);">
+                            <strong>Abdominais</strong>
+                            <p>3 vídeos (18%)</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.25rem;">MELHOR retenção</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-orange);">
+                            <strong>HIIT/Combo</strong>
+                            <p>1 vídeo (6%)</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.25rem;">Watch time alto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🎯 Meta Janeiro 2026</div>
+                    <div class="info-box" style="--theme-color: var(--accent-primary);">
+                        <strong style="font-size: 1.25rem;">+15.000 inscritos</strong> (conservador)
+                        <p style="margin-top: 0.5rem;"><strong>+20.000-25.000 inscritos</strong> (otimista)</p>
+                        <p style="margin-top: 0.75rem; font-size: 0.875rem;">Baseado em 18 vídeos estratégicos</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🔥 Vídeos Com Maior Potencial Viral</div>
+                    <ul style="list-style: none;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                            <strong>09/01 (SEX)</strong> - "9 MIN | 9 EXERCÍCIOS" (modelo: 1.1M views)
+                        </li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                            <strong>20/01 (TER)</strong> - "Bumbum dos Sonhos" (modelo: 852k views)
+                        </li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                            <strong>30/01 (SEX)</strong> - "FAÇA ISSO POR 10 DIAS" (modelo: 329k views)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar de Referências -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>📚 Guia de Referências</h2>
+            <button class="modal-close" onclick="closeSidebar()">×</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">⭐ Vídeos-Referência Essenciais</div>
+            
+            <div class="reference-item">
+                <div class="stars">★★★★★</div>
+                <div class="reference-id">ID: tVQDe1YxihE</div>
+                <div class="reference-metrics">📊 1.5M views | 82.69/10k | CTR 12.01%</div>
+                <div class="reference-title">Como Perder Barriga e Ganhar Pernas e Glúteos em 7 Dias</div>
+                <div class="reference-study">📖 Estude: Hook inicial + Energia + Thumbnail + Estrutura geral</div>
+                <a href="https://studio.youtube.com/video/tVQDe1YxihE/analytics" target="_blank" class="reference-link">
+                    Ver no YouTube Studio →
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <div class="stars">★★★★★</div>
+                <div class="reference-id">ID: oAh1MT_z4rQ</div>
+                <div class="reference-metrics">📊 1M views | 105.73/10k | 44.9% retenção</div>
+                <div class="reference-title">10 ABDOMINAIS EM PÉ para Perder Barriga em 7 Dias</div>
+                <div class="reference-study">📖 Estude: Retenção + Explicação exercícios + Tom de voz</div>
+                <a href="https://studio.youtube.com/video/oAh1MT_z4rQ/analytics" target="_blank" class="reference-link">
+                    Ver no YouTube Studio →
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <div class="stars">★★★★★</div>
+                <div class="reference-id">ID: 45BYCOv9GRs</div>
+                <div class="reference-metrics">📊 1.1M views | 111.78/10k | CTR 11.13%</div>
+                <div class="reference-title">9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES</div>
+                <div class="reference-study">📖 Estude: Ritmo acelerado + Thumbnail + Energia constante</div>
+                <a href="https://studio.youtube.com/video/45BYCOv9GRs/analytics" target="_blank" class="reference-link">
+                    Ver no YouTube Studio →
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <div class="stars">★★★★☆</div>
+                <div class="reference-id">ID: CeEEU2N8xFk</div>
+                <div class="reference-metrics">📊 128.26/10k - RECORDE ABSOLUTO!</div>
+                <div class="reference-title">7 Exercícios PODEROSOS Para Ter Pernas Grossas</div>
+                <div class="reference-study">📖 Estude: Por que converteu tanto? Título específico</div>
+                <a href="https://studio.youtube.com/video/CeEEU2N8xFk/analytics" target="_blank" class="reference-link">
+                    Ver no YouTube Studio →
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <div class="stars">★★★★☆</div>
+                <div class="reference-id">ID: EIwndVX7DlY</div>
+                <div class="reference-metrics">📊 CTR 14.24% - MELHOR DO CANAL!</div>
+                <div class="reference-title">8 Minutos Para Aumentar, Tonificar & Esculpir</div>
+                <div class="reference-study">📖 Estude: Thumbnail PERFEITA - cores e contraste</div>
+                <a href="https://studio.youtube.com/video/EIwndVX7DlY/analytics" target="_blank" class="reference-link">
+                    Ver no YouTube Studio →
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">✅ Checklist Diário Universal</div>
+            <div class="info-box" style="--theme-color: var(--accent-primary);">
+                <strong>ANTES DE GRAVAR:</strong>
+                <ul class="checklist" style="margin-top: 0.75rem;">
+                    <li>☐ Assisti vídeo de referência principal</li>
+                    <li>☐ Estudei hook inicial (30s)</li>
+                    <li>☐ Analisei thumbnail de referência</li>
+                    <li>☐ Exercícios preparados na ordem</li>
+                    <li>☐ Música de fundo testada</li>
+                    <li>☐ Câmera e iluminação ok</li>
+                    <li>☐ Energia ALTA garantida</li>
+                </ul>
+            </div>
+            <div class="info-box" style="--theme-color: var(--accent-green); margin-top: 1rem;">
+                <strong>ANTES DE PUBLICAR:</strong>
+                <ul class="checklist" style="margin-top: 0.75rem;">
+                    <li>☐ Thumbnail contrastante</li>
+                    <li>☐ Título com números específicos</li>
+                    <li>☐ Emoji estratégico (🔥 🍑)</li>
+                    <li>☐ Descrição com timestamps</li>
+                    <li>☐ Tags inseridas</li>
+                    <li>☐ Horário correto</li>
+                    <li>☐ Thumbnail alternativa pronta</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">💡 Regras de Ouro</div>
+            <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.8;">
+                <p>• <strong>CTR < 8% em 48h?</strong> → Troque thumbnail!</p>
+                <p>• <strong>80% do sucesso</strong> = primeiros 30 segundos</p>
+                <p>• <strong>Responda</strong> 20-30 comentários em 2h</p>
+                <p>• <strong>Consistência > Perfeição</strong></p>
+                <p>• <strong>Replique</strong> campeões, não invente demais</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DADOS DO CALENDÁRIO
+        const calendarData = [
+            {
+                id: 1,
+                data: "07/01/2026",
+                diaSemana: "TERÇA",
+                tema: "pernas",
+                temaLabel: "PERNAS",
+                titulo: "8 EXERCÍCIOS SIMPLES Para Pernas GROSSAS e DEFINIDAS em 4 Semanas!",
+                estrutura: [
+                    "8 exercícios para pernas (coxas + panturrilhas)",
+                    "60 segundos cada exercício",
+                    "Sem equipamento",
+                    "Duração: ~10-12 minutos"
+                ],
+                porque: [
+                    "Pernas = MELHOR conversão (32.65 inscritos/10k)",
+                    "'Pernas Grossas' = #1 conversão (128.26/10k)",
+                    "Terça = ótimo dia para lançar"
+                ],
+                referencias: [
+                    {
+                        tipo: "Hook & Introdução",
+                        id: "CeEEU2N8xFk",
+                        titulo: "7 Exercícios PODEROSOS Para Ter Pernas Grossas e Definidas",
+                        metricas: "128.26 inscritos/10k",
+                        estudo: "Veja como você começou esse vídeo (primeiros 30 segundos)"
+                    },
+                    {
+                        tipo: "CTR (Thumbnail)",
+                        id: "EIwndVX7DlY",
+                        titulo: "8 Minutos Para Aumentar, Tonificar & Esculpir Pernas e Glúteos",
+                        metricas: "CTR 14.24% - RECORDE!",
+                        estudo: "Copie o estilo da thumbnail deste vídeo"
+                    },
+                    {
+                        tipo: "Ritmo & Energia",
+                        id: "45BYCOv9GRs",
+                        titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                        metricas: "111.78 inscritos/10k + 1.1M views",
+                        estudo: "Veja o ritmo das transições e sua energia neste vídeo"
+                    },
+                    {
+                        tipo: "Retenção",
+                        id: "oAh1MT_z4rQ",
+                        titulo: "10 ABDOMINAIS EM PÉ para Perder Barriga em 7 Dias",
+                        metricas: "105.73 inscritos/10k + 44.9% retenção",
+                        estudo: "Note como você mantém o espectador engajado"
+                    }
+                ],
+                producao: {
+                    thumbnail: "Suas pernas em destaque, texto amarelo 'PERNAS GROSSAS', '4 SEMANAS'",
+                    musica: "Energética (mesmo estilo ID: 45BYCOv9GRs)",
+                    tags: ["pernas grossas", "pernas definidas", "tonificar pernas", "treino pernas casa"],
+                    horario: "7h00"
+                },
+                checklist: [
+                    "Assisti o vídeo ID: CeEEU2N8xFk (hook inicial)",
+                    "Estudei thumbnail ID: EIwndVX7DlY",
+                    "Analisei ritmo ID: 45BYCOv9GRs",
+                    "Preparei os 8 exercícios na ordem",
+                    "Testei a música de fundo",
+                    "Câmera e iluminação configuradas",
+                    "Thumbnail com cores contrastantes pronta",
+                    "Título finalizado com números",
+                    "Descrição com timestamps",
+                    "Tags inseridas",
+                    "Horário de publicação agendado (7h00)"
+                ]
+            },
+            {
+                id: 2,
+                data: "08/01/2026",
+                diaSemana: "QUARTA",
+                tema: "gluteos",
+                temaLabel: "GLÚTEOS",
+                titulo: "FAÇA ISSO POR 7 DIAS: 8 Exercícios Para GLÚTEOS GRANDES 🍑 (8 Minutos)",
+                estrutura: [
+                    "8 exercícios focados em glúteos",
+                    "50 segundos trabalho + 10s transição",
+                    "Ênfase em ativação muscular",
+                    "Duração: 8 minutos exatos"
+                ],
+                porque: [
+                    "'FAÇA ISSO' = 49.1% retenção média (MELHOR FORMATO!)",
+                    "Glúteos = 11.7M views em 365 dias",
+                    "ID: tt3tqQWGZeU fez 892k views com formato similar"
+                ],
+                referencias: [
+                    {
+                        tipo: "Hook & Introdução",
+                        id: "tt3tqQWGZeU",
+                        titulo: "10 DIAS | 8 MINUTOS PARA GLÚTEOS PERFEITOS EM CASA! 🍑",
+                        metricas: "90.41 inscritos/10k + 892k views + CTR 12.24%",
+                        estudo: "Primeiros 15 segundos são PERFEITOS - copie a energia!"
+                    },
+                    {
+                        tipo: "Thumbnail",
+                        id: "45BYCOv9GRs",
+                        titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                        metricas: "111.78 inscritos/10k + 1.1M views + CTR 11.13%",
+                        estudo: "Ângulo lateral do glúteo + emoji 🍑 + números grandes"
+                    },
+                    {
+                        tipo: "Explicação",
+                        id: "tbpXnQA2S6U",
+                        titulo: "FAÇA ISSO PARA AUMENTAR SEUS GLÚTEOS EM CASA",
+                        metricas: "93.37 inscritos/10k + 398k views",
+                        estudo: "Veja como você explica cada movimento de forma clara"
+                    },
+                    {
+                        tipo: "Retenção & Ritmo",
+                        id: "cSHfyacq044",
+                        titulo: "FAÇA ISSO PARA AUMENTAR SEUS GLÚTEOS RAPIDINHO",
+                        metricas: "91.39 inscritos/10k + CTR 10.34%",
+                        estudo: "Ritmo perfeito, sem enrolação, direto ao ponto"
+                    },
+                    {
+                        tipo: "CTA",
+                        id: "BOgmzq3an8o",
+                        titulo: "Os 5 Melhores Exercícios para Glúteos Perfeitos (em 2025!)",
+                        metricas: "86.05 inscritos/10k + 440k views",
+                        estudo: "Note como você pede pra inscrever no final"
+                    }
+                ],
+                producao: {
+                    thumbnail: "Você de lado mostrando glúteo, 'FAÇA ISSO POR 7 DIAS' em destaque, emoji 🍑",
+                    musica: "Pop motivacional (mesmo estilo ID: tt3tqQWGZeU)",
+                    tags: ["faça isso", "aumentar glúteos", "bumbum grande", "7 dias", "treino glúteos"],
+                    horario: "18h00"
+                },
+                checklist: [
+                    "Assisti o vídeo ID: tt3tqQWGZeU (hook inicial)",
+                    "Estudei thumbnail ID: 45BYCOv9GRs",
+                    "Analisei explicação ID: tbpXnQA2S6U",
+                    "Preparei os 8 exercícios",
+                    "Testei música pop motivacional",
+                    "Câmera no ângulo lateral correto",
+                    "Thumbnail pronta (você + 'FAÇA ISSO')",
+                    "Título com emoji 🍑",
+                    "Tags sobre glúteos inseridas",
+                    "Agendado para 18h00"
+                ]
+            },
+            {
+                id: 3,
+                data: "09/01/2026",
+                diaSemana: "QUINTA",
+                tema: "abdominais",
+                temaLabel: "ABDOMINAIS",
+                titulo: "15 ABDOMINAIS EM PÉ Para Perder Barriga em 7 Dias | Treino Matinal 20 Min",
+                estrutura: [
+                    "15 exercícios abdominais em pé",
+                    "60 segundos cada + 10s descanso",
+                    "Progressão: fácil → médio → difícil",
+                    "Duração: ~20 minutos"
+                ],
+                porque: [
+                    "Abdominais em Pé = 40.6% retenção média (ALTÍSSIMA!)",
+                    "ID: oAh1MT_z4rQ = 1M views + 105.73/10k",
+                    "'Treino Matinal' = 46.6% retenção"
+                ],
+                referencias: [
+                    {
+                        tipo: "VÍDEO LENDÁRIO (Copie TUDO)",
+                        id: "oAh1MT_z4rQ",
+                        titulo: "10 ABDOMINAIS EM PÉ para Perder Barriga em 7 Dias",
+                        metricas: "105.73 inscritos/10k + 1M views + 44.9% retenção",
+                        estudo: "Este é SEU MELHOR vídeo de abdominais - REPLIQUE TUDO: Hook, energia, ritmo, transições, demonstração, CTA"
+                    },
+                    {
+                        tipo: "Formato Matinal",
+                        id: "fccuPeLx5n8",
+                        titulo: "16 Abdominais em Pé Para Perder Barriga Rápido em 20 Minutos!",
+                        metricas: "94.36 inscritos/10k + CTR 8.84%",
+                        estudo: "Veja o tom mais 'matinal' e motivacional"
+                    },
+                    {
+                        tipo: "Thumbnail",
+                        id: "RFF4LXavJVY",
+                        titulo: "🔥 5 Abdominais em Pé para Perder Barriga & Esculpir Pernas",
+                        metricas: "82.58 inscritos/10k + 223k views",
+                        estudo: "Perfil do abdômen + emoji 🔥 + texto claro"
+                    }
+                ],
+                producao: {
+                    thumbnail: "Você fazendo abdominal em pé, '15 ABDOMINAIS EM PÉ', sol nascendo",
+                    musica: "Energética matinal (mesmo estilo ID: oAh1MT_z4rQ)",
+                    tags: ["abdominais em pé", "perder barriga", "treino matinal", "7 dias"],
+                    horario: "7h00"
+                },
+                checklist: [
+                    "Assisti TODO o vídeo ID: oAh1MT_z4rQ",
+                    "Estudei cada segundo do hook dele",
+                    "Copiei o tom de voz matinal",
+                    "Preparei 15 exercícios progressivos",
+                    "Música energética matinal testada",
+                    "Iluminação solar/matinal configurada",
+                    "Thumbnail com sol nascendo pronta",
+                    "Título enfatiza 'TREINO MATINAL'",
+                    "Agendado para 7h00 (PEAK matinal)"
+                ]
+            },
+            {
+                id: 4,
+                data: "10/01/2026",
+                diaSemana: "SEXTA",
+                tema: "hiit",
+                temaLabel: "COMBO",
+                titulo: "Como Perder Barriga e Ganhar Pernas + Glúteos em 7 Dias: Treino de 10 Min 🔥",
+                estrutura: [
+                    "10 exercícios compostos",
+                    "50s trabalho + 10s transição",
+                    "Combina os 3 objetivos mais buscados",
+                    "Duração: 10 minutos"
+                ],
+                porque: [
+                    "ID: tVQDe1YxihE = SEU MAIOR VIRAL (1.5M views!)",
+                    "Combina múltiplos objetivos = dobro do apelo",
+                    "Sexta = pessoal quer treino rápido"
+                ],
+                referencias: [
+                    {
+                        tipo: "COPIE ESTE VÍDEO QUASE INTEIRO",
+                        id: "tVQDe1YxihE",
+                        titulo: "Como Perder Barriga e Ganhar Pernas e Glúteos em 7 Dias: Treino de 8 Minutos 🔥",
+                        metricas: "82.69 inscritos/10k + 1.5M VIEWS + CTR 12.01% + 42.2% retenção",
+                        estudo: "ESTE É SEU CAMPEÃO ABSOLUTO: Thumbnail (exatamente esse estilo), Hook (copie palavra por palavra a energia), Estrutura (mesma sequência), Tom (exatamente essa vibe), Duração (você fez 8min, agora faça 10min)"
+                    },
+                    {
+                        tipo: "Exercícios Adicionais",
+                        id: "45BYCOv9GRs",
+                        titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                        metricas: "111.78 inscritos/10k + 1.1M views",
+                        estudo: "Para pegar alguns exercícios compostos adicionais"
+                    }
+                ],
+                producao: {
+                    thumbnail: "Split screen (barriga + glúteo + perna), '10 MIN', '7 DIAS', emoji 🔥",
+                    musica: "Mesma vibe do ID: tVQDe1YxihE",
+                    tags: ["perder barriga", "aumentar glúteos", "pernas definidas", "treino 10 minutos"],
+                    horario: "19h00"
+                },
+                checklist: [
+                    "Assisti COMPLETO o ID: tVQDe1YxihE",
+                    "Copiei a energia do início ao fim",
+                    "Thumbnails lado a lado comparadas",
+                    "Mesma sequência de exercícios + 2 novos",
+                    "Música idêntica ou muito similar",
+                    "Split screen na thumbnail pronto",
+                    "Emoji 🔥 no título",
+                    "Sexta 19h00 agendado"
+                ]
+            },
+            {
+                id: 5,
+                data: "13/01/2026",
+                diaSemana: "SEGUNDA",
+                tema: "abdominais",
+                temaLabel: "ABDOMINAIS",
+                titulo: "FAÇA ISSO TODA MANHÃ Para Perder Barriga 3X Mais Rápido! 🔥 [15 Min]",
+                estrutura: [
+                    "12-15 exercícios variados",
+                    "Formato 'acordar e treinar'",
+                    "Ritmo energético desde o início",
+                    "Duração: 15 minutos"
+                ],
+                porque: [
+                    "Formato 'FAÇA ISSO PELAS MANHÃS' = até 241% retenção!",
+                    "ID: slhHa4RTZR0 = 747k views",
+                    "Segunda matinal = busca altíssima"
+                ],
+                referencias: [
+                    {
+                        tipo: "RETENÇÃO LENDÁRIA",
+                        id: "Qq8k9Lus9OU",
+                        titulo: "FAÇA ISSO TODA MANHÃ PARA DERRETER GORDURA DA BARRIGA 3X MAIS RÁPIDO",
+                        metricas: "241.7% RETENÇÃO! - número surreal",
+                        estudo: "Estude este vídeo intensamente: Por que as pessoas reassistem? Como você estruturou? Qual o segredo da alta retenção?"
+                    },
+                    {
+                        tipo: "VOLUME (747k views)",
+                        id: "slhHa4RTZR0",
+                        titulo: "FAÇA ISSO PELAS MANHÃS PARA PERDER BARRIGA 3X MAIS RÁPIDO",
+                        metricas: "36.17 inscritos/10k + 747k views + 97.6% retenção",
+                        estudo: "Hook inicial é MATADOR - copie exatamente"
+                    },
+                    {
+                        tipo: "Alternativa",
+                        id: "Ig_L3wa87ww",
+                        titulo: "Faça Isso Toda Manhã Para Derreter Gordura Abdominal Em Casa",
+                        metricas: "39.42 inscritos/10k + 610k views + 86% retenção",
+                        estudo: "Thumbnail e energia são excelentes"
+                    }
+                ],
+                producao: {
+                    thumbnail: "Você acordando/alongando, sol nascendo, 'FAÇA ISSO TODA MANHÃ', '3X MAIS'",
+                    musica: "Energética motivacional (ID: slhHa4RTZR0)",
+                    tags: ["faça isso toda manhã", "perder barriga rápido", "treino matinal", "3x mais rápido"],
+                    horario: "7h00"
+                },
+                checklist: [
+                    "Estudei ID: Qq8k9Lus9OU (retenção 241%!)",
+                    "Hook do ID: slhHa4RTZR0 copiado",
+                    "Thumbnail com você 'acordando'",
+                    "15 exercícios preparados",
+                    "Tom de 'ritual matinal'",
+                    "7h00 EXATO agendado"
+                ]
+            },
+            {
+        id: 6,
+        data: "14/01/2026",
+        diaSemana: "TERÇA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "10 Exercícios Para Glúteos Redondos e Firmes em Apenas 10 Minutos! 🍑",
+        estrutura: [
+            "10 exercícios específicos para glúteos",
+            "50s cada + 10s transição",
+            "Foco em glúteo médio e máximo",
+            "Duração: 10 minutos exatos"
+        ],
+        porque: [
+            "ID: P0DbKoHS-2A = CTR 12.75% (2º MELHOR DO CANAL!)",
+            "'10 exercícios em 10 minutos' = fórmula pegajosa",
+            "Terça = bom dia para glúteos"
+        ],
+        referencias: [
+            {
+                tipo: "CTR RECORDE (Copie a Thumbnail!)",
+                id: "P0DbKoHS-2A",
+                titulo: "10 Exercícios Para Glúteos Redondos e Firmes em Apenas 10 Minutos!",
+                metricas: "83.07 inscritos/10k + 300k views + CTR 12.75%",
+                estudo: "Thumbnail PERFEITA: Ângulo mostrando resultado + Texto claro e grande + Contraste forte → REPLIQUE EXATAMENTE ESTE ESTILO"
+            },
+            {
+                tipo: "Conversão em Glúteos",
+                id: "45BYCOv9GRs",
+                titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                metricas: "111.78 inscritos/10k + 1.1M views",
+                estudo: "Pegue exercícios daqui"
+            },
+            {
+                tipo: "Estrutura 10 Min",
+                id: "VddfR0tMNmk",
+                titulo: "10 Minutos É TUDO O QUE Você Precisa Para Definir Pernas e Glúteos!",
+                metricas: "76.74 inscritos/10k + 222k views",
+                estudo: "Ritmo e estrutura são perfeitos"
+            }
+        ],
+        producao: {
+            thumbnail: "Ângulo lateral do glúteo, '10 EXERCÍCIOS', '10 MIN', emoji 🍑",
+            musica: "Pop energético (ID: P0DbKoHS-2A)",
+            tags: ["glúteos redondos", "glúteos firmes", "10 exercícios", "10 minutos"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Estudei thumbnail ID: P0DbKoHS-2A (CTR 12.75%!)",
+            "Preparei os 10 exercícios",
+            "Ângulo lateral da câmera testado",
+            "Thumbnail com contraste forte pronta",
+            "10 MIN e 10 EXERCÍCIOS no título",
+            "Agendado 18h00"
+        ]
+    },
+    {
+        id: 7,
+        data: "15/01/2026",
+        diaSemana: "QUARTA",
+        tema: "pernas",
+        temaLabel: "PERNAS + GLÚTEOS",
+        titulo: "7 Exercícios Que Vão Esculpir Suas Pernas e Glúteos em 4 Semanas! (10 Min)",
+        estrutura: [
+            "7 exercícios compostos (pernas + glúteos)",
+            "60s cada + 20s descanso",
+            "Intensidade progressiva",
+            "Duração: ~10 minutos"
+        ],
+        porque: [
+            "ID: YSkBxGXsNog = 95.44/10k + 256k views",
+            "Pernas + Glúteos = duplo apelo",
+            "'Esculpir' = palavra forte"
+        ],
+        referencias: [
+            {
+                tipo: "Vídeo Base (Copie a Estrutura)",
+                id: "YSkBxGXsNog",
+                titulo: "7 Exercícios que vão Esculpir suas Pernas e Glúteos em Apenas 4 Semanas! #23",
+                metricas: "95.44 inscritos/10k + 256k views + CTR 7.90%",
+                estudo: "Este formato já funcionou MUITO BEM: Mesma quantidade (7), mesma promessa (4 semanas), mesma energia"
+            },
+            {
+                tipo: "CTR Alternativo",
+                id: "EIwndVX7DlY",
+                titulo: "8 Minutos Para Aumentar, Tonificar & Esculpir Pernas e Glúteos",
+                metricas: "CTR 14.24% - RECORDE",
+                estudo: "Pegue o estilo da thumbnail"
+            }
+        ],
+        producao: {
+            thumbnail: "Pernas + glúteo em ação, '7 EXERCÍCIOS', '4 SEMANAS'",
+            musica: "Energética (ID: YSkBxGXsNog)",
+            tags: ["esculpir pernas", "pernas e gluteos", "treino completo", "4 semanas"],
+            horario: "19h00"
+        },
+        checklist: [
+            "Assisti ID: YSkBxGXsNog completo",
+            "7 exercícios compostos preparados",
+            "Ritmo progressivo ensaiado",
+            "Thumbnail pernas + glúteo",
+            "'ESCULPIR' no título",
+            "19h00 agendado"
+        ]
+    },
+    {
+        id: 8,
+        data: "16/01/2026",
+        diaSemana: "QUINTA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "FAÇA ISSO POR 10 DIAS: 5 Exercícios Para GLÚTEOS PERFEITOS 🍑 (8 Min Diários)",
+        estrutura: [
+            "5 exercícios mais efetivos",
+            "2 rounds completos de cada",
+            "~8 minutos total",
+            "Criar sensação de 'desafio'"
+        ],
+        porque: [
+            "ID: tt3tqQWGZeU = 892k views com formato similar",
+            "'10 DIAS' = compromisso realista",
+            "Quinta = início de desafio pro fim de semana"
+        ],
+        referencias: [
+            {
+                tipo: "Formato Viral Comprovado",
+                id: "tt3tqQWGZeU",
+                titulo: "10 DIAS | 8 MINUTOS PARA GLÚTEOS PERFEITOS EM CASA! 🍑",
+                metricas: "90.41 inscritos/10k + 892k views + CTR 12.24%",
+                estudo: "ESTE É O MODELO PERFEITO: Thumbnail com '10 DIAS' em destaque + Hook prometendo resultado em dias específicos + Estrutura de 'desafio' no discurso"
+            },
+            {
+                tipo: "Melhores Exercícios",
+                id: "BOgmzq3an8o",
+                titulo: "Os 5 Melhores Exercícios para Glúteos Perfeitos (em 2025!)",
+                metricas: "86.05 inscritos/10k + 440k views",
+                estudo: "Pegue os 5 exercícios mais efetivos"
+            }
+        ],
+        producao: {
+            thumbnail: "Before/after sugerido, '10 DIAS', '5 EXERCÍCIOS', emoji 🍑",
+            musica: "Motivacional desafiadora (ID: tt3tqQWGZeU)",
+            tags: ["desafio 10 dias", "glúteos perfeitos", "5 exercícios", "bumbum grande"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Hook do ID: tt3tqQWGZeU copiado",
+            "5 exercícios mais efetivos selecionados",
+            "Tom de 'desafio' no discurso",
+            "Thumbnail com '10 DIAS' grande",
+            "18h00 quinta agendado"
+        ]
+    },
+    {
+        id: 9,
+        data: "17/01/2026",
+        diaSemana: "SEXTA",
+        tema: "hiit",
+        temaLabel: "HIIT",
+        titulo: "30 MIN Para Perder Barriga e Afinar Cintura em 7 Dias 🔥 [HIIT Completo]",
+        estrutura: [
+            "30 minutos HIIT",
+            "40s trabalho / 20s descanso",
+            "Baixo impacto (sem pulos)",
+            "Alternância corpo todo"
+        ],
+        porque: [
+            "ID: sMN1zUIg5d8 = 496k views + 67.98/10k",
+            "30 min = alto watch time",
+            "Sexta = treino intenso pra fechar semana"
+        ],
+        referencias: [
+            {
+                tipo: "Vídeo Base (Já Funcionou!)",
+                id: "sMN1zUIg5d8",
+                titulo: "30 MIN Para Perder Barriga e Afinar a Cintura em 7 Dias 🔥 Treino Cardio Hiit",
+                metricas: "67.98 inscritos/10k + 496k views + CTR 9.64%",
+                estudo: "Este EXATO formato já viralizou: Mesma duração (30 min) + Mesma promessa (7 dias) → REPLIQUE a estrutura do treino"
+            },
+            {
+                tipo: "Energia e Motivação",
+                id: "tVQDe1YxihE",
+                titulo: "Como Perder Barriga e Ganhar Pernas e Glúteos em 7 Dias",
+                metricas: "1.5M views",
+                estudo: "Pegue a energia deste vídeo"
+            }
+        ],
+        producao: {
+            thumbnail: "Você suando em ação, cronômetro '30:00', '7 DIAS', emoji 🔥",
+            musica: "Alta energia HIIT (ID: sMN1zUIg5d8)",
+            tags: ["treino hiit", "30 minutos", "perder barriga", "queimar gordura"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Estrutura 30 min do ID: sMN1zUIg5d8",
+            "Intervalos 40s/20s cronometrados",
+            "Cronômetro visível na tela",
+            "Você visivelmente suando",
+            "Sexta 18h00 agendado"
+        ]
+    },
+    {
+        id: 10,
+        data: "20/01/2026",
+        diaSemana: "SEGUNDA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "Bumbum dos SONHOS 🍑: Treino Secreto de 10 Minutos (TESTADO E APROVADO!)",
+        estrutura: [
+            "8-10 exercícios 'secretos'",
+            "Ênfase em conexão mente-músculo",
+            "10 minutos intensos",
+            "Tom de 'segredo revelado'"
+        ],
+        porque: [
+            "ID: j5T8A0FeYuk = 852k views (6º MAIOR DO CANAL!)",
+            "'Bumbum dos Sonhos' = título sedutor",
+            "Segunda = reinício de compromisso"
+        ],
+        referencias: [
+            {
+                tipo: "VIRAL COMPROVADO (852K VIEWS!)",
+                id: "j5T8A0FeYuk",
+                titulo: "Bumbum dos Sonhos 🍑: Treino Secreto de 10 Minutos #gluteos",
+                metricas: "49.63 inscritos/10k + 852k views + CTR 9.52% + 82.3% retenção",
+                estudo: "ESTUDE TUDO DESTE VÍDEO: Por que viralizou tanto? + Thumbnail mostra resultado + 'Treino Secreto' gera curiosidade + Retenção de 82.3% é INSANA → REPLIQUE COM PEQUENAS MELHORIAS"
+            },
+            {
+                tipo: "Exercícios Alternativos",
+                id: "2j6VcWCAUaU",
+                titulo: "O BUMBUM DOS SONHOS com 4 Exercícios para fazer Em Casa",
+                metricas: "101.95 inscritos/10k + 306k views",
+                estudo: "Pegue exercícios adicionais"
+            }
+        ],
+        producao: {
+            thumbnail: "Resultado impressionante de glúteo, 'SONHOS', '10 MIN', emoji 🍑",
+            musica: "Mesma do ID: j5T8A0FeYuk",
+            tags: ["bumbum dos sonhos", "treino secreto", "glúteos perfeitos", "10 minutos"],
+            horario: "7h00"
+        },
+        checklist: [
+            "Assisti COMPLETO ID: j5T8A0FeYuk",
+            "Thumbnail similar preparada",
+            "'SECRETO' no tom de voz",
+            "8-10 exercícios diferentes",
+            "Segunda 7h00 matinal"
+        ]
+    },
+    {
+        id: 11,
+        data: "21/01/2026",
+        diaSemana: "TERÇA",
+        tema: "abdominais",
+        temaLabel: "CINTURA",
+        titulo: "6 Exercícios FÁCEIS Para Afinar Cintura e Aumentar Quadril em 3 Semanas! (8 Min)",
+        estrutura: [
+            "6 exercícios para cintura",
+            "Movimentos laterais + torções",
+            "50s cada + 10s transição",
+            "Duração: 8 minutos"
+        ],
+        porque: [
+            "'Afinar Cintura' = 3.2M views em 365 dias",
+            "ID: FnvMpkbZUoo = 1.1M views (2º MAIOR!)",
+            "Público feminino ama esse objetivo"
+        ],
+        referencias: [
+            {
+                tipo: "MEGA VIRAL (1.1M VIEWS!)",
+                id: "FnvMpkbZUoo",
+                titulo: "Faça Isso Em Casa Para Afinar Sua Cintura / 10 Min Treino Abdominal Em Casa",
+                metricas: "44.79 inscritos/10k + 1.1M views + CTR 6.15%",
+                estudo: "2º VÍDEO MAIS VISTO DO CANAL! Por que 1.1M de views? + Thumbnail mostra cintura + Título promete resultado claro"
+            },
+            {
+                tipo: "Melhor CTR Neste Tema",
+                id: "CX3fuc0dxRo",
+                titulo: "8 Exercícios Fáceis Para Reduzir os Pneuzinhos Laterais e Emagrecer os Braços",
+                metricas: "49.09 inscritos/10k + 136k views + CTR 10.38%",
+                estudo: "Thumbnail com contraste forte"
+            }
+        ],
+        producao: {
+            thumbnail: "Ênfase na sua cintura, marcação visual comparativa, 'CINTURA FINA'",
+            musica: "Elegante e motivacional (ID: FnvMpkbZUoo)",
+            tags: ["afinar cintura", "cintura fina", "aumentar quadril", "perder pneuzinhos"],
+            horario: "19h00"
+        },
+        checklist: [
+            "Estudei ID: FnvMpkbZUoo (1.1M!)",
+            "6 exercícios laterais preparados",
+            "Cintura em destaque na thumbnail",
+            "'AFINAR CINTURA' no título",
+            "19h00 terça noite"
+        ]
+    },
+    {
+        id: 12,
+        data: "22/01/2026",
+        diaSemana: "QUARTA",
+        tema: "abdominais",
+        temaLabel: "ABDOMINAIS",
+        titulo: "20 Abdominais Em Pé Para Perder Barriga em 7 Dias! [Treino Matinal 25 Min]",
+        estrutura: [
+            "20 exercícios abdominais em pé",
+            "60s cada + 10s descanso",
+            "Progressão gradual",
+            "Duração: 25 minutos"
+        ],
+        porque: [
+            "Abdominais em Pé = 40.6% retenção média",
+            "ID: oAh1MT_z4rQ = 1M views",
+            "Quarta matinal = busca moderada-alta"
+        ],
+        referencias: [
+            {
+                tipo: "Campeão Absoluto",
+                id: "oAh1MT_z4rQ",
+                titulo: "10 ABDOMINAIS EM PÉ para Perder Barriga em 7 Dias",
+                metricas: "105.73 inscritos/10k + 1M views + 44.9% retenção",
+                estudo: "ESTE É O PADRÃO OURO: Replique TUDO + Só aumente para 20 exercícios"
+            },
+            {
+                tipo: "Alternativa",
+                id: "nlFUlb7KBb0",
+                titulo: "21 Abdominais em Pé Para Perder Barriga e Tonificar Pernas e Glúteos!",
+                metricas: "75.74 inscritos/10k + CTR 7.87%",
+                estudo: "Veja a variação de exercícios"
+            }
+        ],
+        producao: {
+            thumbnail: "Você em movimento, '20 ABDOMINAIS EM PÉ', sol nascendo",
+            musica: "Energética matinal (ID: oAh1MT_z4rQ)",
+            tags: ["20 abdominais", "abdominais em pé", "treino matinal", "perder barriga"],
+            horario: "7h00"
+        },
+        checklist: [
+            "Repliquei ID: oAh1MT_z4rQ",
+            "20 exercícios em pé preparados",
+            "Tom matinal motivacional",
+            "Quarta 7h00 agendado"
+        ]
+    },
+    {
+        id: 13,
+        data: "23/01/2026",
+        diaSemana: "QUINTA",
+        tema: "pernas",
+        temaLabel: "PERNAS",
+        titulo: "8 Exercícios Simples Para Perder Gordura da Coxa em 4 Semanas (10 Min)",
+        estrutura: [
+            "8 exercícios para coxas (internas/externas)",
+            "60s cada exercício",
+            "Foco em ativação muscular",
+            "Duração: 10 minutos"
+        ],
+        porque: [
+            "ID: 78zJH2Ehhvw = 119.80/10k (2ª MELHOR CONVERSÃO!)",
+            "'Gordura da Coxa' = busca específica, menos concorrência",
+            "Nicho não saturado"
+        ],
+        referencias: [
+            {
+                tipo: "2ª MELHOR CONVERSÃO DO CANAL!",
+                id: "78zJH2Ehhvw",
+                titulo: "6 Exercícios Fáceis Para Perder Gordura da Coxa em 4 Semanas!",
+                metricas: "119.80 inscritos/10k + 31k views + CTR 6.64% + 38.5% retenção",
+                estudo: "FORMATO MATADOR: 2ª melhor conversão de TODO o canal! + Título direto e específico + Promessa realista (4 semanas) → COPIE ESTE FORMATO COM 8 EXERCÍCIOS"
+            },
+            {
+                tipo: "Melhor Pernas",
+                id: "CeEEU2N8xFk",
+                titulo: "7 Exercícios PODEROSOS Para Ter Pernas Grossas",
+                metricas: "128.26 inscritos/10k - CAMPEÃO",
+                estudo: "Pegue exercícios complementares"
+            }
+        ],
+        producao: {
+            thumbnail: "Foco nas suas coxas, antes/depois sugerido, 'COXA FINA'",
+            musica: "Energética (ID: 78zJH2Ehhvw)",
+            tags: ["perder gordura da coxa", "afinar coxas", "coxas finas", "exercícios coxa"],
+            horario: "19h00"
+        },
+        checklist: [
+            "Estudei ID: 78zJH2Ehhvw (119.80/10k!)",
+            "8 exercícios coxa preparados",
+            "Foco nas coxas na thumbnail",
+            "'GORDURA DA COXA' específico",
+            "19h00 quinta"
+        ]
+    },
+    {
+        id: 14,
+        data: "24/01/2026",
+        diaSemana: "SEXTA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES + Pernas Firmes! 🍑 (RÁPIDO!)",
+        estrutura: [
+            "9 exercícios (5 glúteos + 4 pernas)",
+            "50s cada + 10s transição",
+            "Intensidade alta",
+            "Duração: 9 minutos"
+        ],
+        porque: [
+            "ID: 45BYCOv9GRs = 1.1M views (3º MAIOR!)",
+            "Formato 'X MIN | X EXERCÍCIOS' funciona",
+            "Sexta = treino rápido intenso"
+        ],
+        referencias: [
+            {
+                tipo: "MEGA VIRAL (1.1M VIEWS + 111.78/10k!)",
+                id: "45BYCOv9GRs",
+                titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES em Casa! 🍑 (Simples e Eficiente)",
+                metricas: "111.78 inscritos/10k + 1.1M views + CTR 11.13%",
+                estudo: "3º VÍDEO MAIS VISTO DO CANAL: Por que explodiu? → Título com repetição do 9 + CTR 11.13% → Thumbnail perfeita + 111.78/10k → Melhor conversão em glúteos → ESTE É O MODELO PERFEITO: ★ Replique o formato 'X MIN | X EXERCÍCIOS' ★ Copie o estilo da thumbnail ★ Mesma energia e ritmo ★ Hook inicial similar"
+            },
+            {
+                tipo: "Alternativa CTR",
+                id: "EIwndVX7DlY",
+                titulo: "8 Minutos Para Aumentar, Tonificar & Esculpir Pernas e Glúteos",
+                metricas: "CTR 14.24%",
+                estudo: "Pegue ideias de thumbnail"
+            }
+        ],
+        producao: {
+            thumbnail: "Ângulo lateral glúteo + perna, '9 MIN | 9 EXERCÍCIOS', emoji 🍑",
+            musica: "Exatamente a mesma do ID: 45BYCOv9GRs",
+            tags: ["9 minutos 9 exercícios", "glúteos grandes", "pernas firmes", "treino rápido"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Assisti COMPLETO ID: 45BYCOv9GRs",
+            "Copiei thumbnail exata",
+            "9 exercícios preparados",
+            "Repetição '9 MIN | 9 EXERC' no título",
+            "Sexta 18h00"
+        ]
+    },
+    {
+        id: 15,
+        data: "27/01/2026",
+        diaSemana: "SEGUNDA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "Os 5 Melhores Exercícios Para Glúteos Perfeitos (em 2026!) 🍑 Experimente AGORA",
+        estrutura: [
+            "5 exercícios 'secretos'",
+            "Explicar POR QUÊ cada um funciona",
+            "3 rounds de cada",
+            "Duração: 12-15 minutos"
+        ],
+        porque: [
+            "ID: BOgmzq3an8o = 440k views + 86.05/10k",
+            "Formato 'Os X Melhores' = autoridade",
+            "'2026' = atualizado"
+        ],
+        referencias: [
+            {
+                tipo: "Vídeo Base (440K VIEWS!)",
+                id: "BOgmzq3an8o",
+                titulo: "Os 5 Melhores Exercícios para Glúteos Perfeitos (em 2025!) (Experimente)",
+                metricas: "86.05 inscritos/10k + 440k views + CTR 10.58%",
+                estudo: "FORMATO VENCEDOR: 'Os X Melhores' = posição de autoridade + '(em 2025!)' = relevância temporal + CTR 10.58% = thumbnail funciona → REPLIQUE MUDANDO APENAS O ANO (2026)"
+            },
+            {
+                tipo: "Melhor Conversão Glúteos",
+                id: "45BYCOv9GRs",
+                titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                metricas: "111.78 inscritos/10k",
+                estudo: "Pegue os 5 exercícios mais efetivos"
+            }
+        ],
+        producao: {
+            thumbnail: "Lista numerada 1-5, emoji 🍑, '2026!' em destaque",
+            musica: "Profissional e energética (ID: BOgmzq3an8o)",
+            tags: ["melhores exercícios", "glúteos perfeitos", "2026", "os 5 melhores"],
+            horario: "7h00"
+        },
+        checklist: [
+            "Copiei estrutura ID: BOgmzq3an8o",
+            "Mudei '2025' para '2026'",
+            "5 exercícios mais efetivos",
+            "Lista 1-5 na thumbnail",
+            "Segunda 7h00"
+        ]
+    },
+    {
+        id: 16,
+        data: "28/01/2026",
+        diaSemana: "TERÇA",
+        tema: "hiit",
+        temaLabel: "COMBO",
+        titulo: "🔥 12 Min Para Perder Barriga + Aumentar Glúteos e Pernas! [TREINO COMPLETO]",
+        estrutura: [
+            "12 exercícios compostos",
+            "40s trabalho / 20s descanso",
+            "Corpo todo com ênfase inferior",
+            "Duração: 12 minutos"
+        ],
+        porque: [
+            "Combina os 3 temas mais fortes",
+            "12 min = duração ideal",
+            "Terça = meio de semana, busca alta"
+        ],
+        referencias: [
+            {
+                tipo: "Maior Viral do Canal",
+                id: "tVQDe1YxihE",
+                titulo: "Como Perder Barriga e Ganhar Pernas e Glúteos em 7 Dias: Treino de 8 Minutos 🔥",
+                metricas: "82.69 inscritos/10k + 1.5M views + CTR 12.01%",
+                estudo: "SEU MAIOR SUCESSO: Replique tudo + Aumente duração pra 12 min + Adicione mais 4 exercícios"
+            },
+            {
+                tipo: "Energia",
+                id: "45BYCOv9GRs",
+                titulo: "9 MINUTOS | 9 Exercícios Para GLÚTEOS GRANDES",
+                metricas: "1.1M views",
+                estudo: "Pegue o ritmo acelerado"
+            }
+        ],
+        producao: {
+            thumbnail: "Ação dinâmica múltiplos músculos, '12 MIN', '3 OBJETIVOS', 🔥",
+            musica: "Alta energia (ID: tVQDe1YxihE)",
+            tags: ["treino completo", "perder barriga", "glúteos pernas", "12 minutos"],
+            horario: "19h00"
+        },
+        checklist: [
+            "Estrutura do ID: tVQDe1YxihE",
+            "12 exercícios compostos",
+            "'3 OBJETIVOS' destacado",
+            "Terça 19h00"
+        ]
+    },
+    {
+        id: 17,
+        data: "30/01/2026",
+        diaSemana: "QUINTA",
+        tema: "pernas",
+        temaLabel: "PERNAS",
+        titulo: "8 EXERCÍCIOS BRUTAIS Para Ter Pernas GROSSAS em 21 Dias! (12 Min)",
+        estrutura: [
+            "8 exercícios intensos para pernas",
+            "60s cada + 20s descanso",
+            "Foco em hipertrofia",
+            "Duração: 12 minutos"
+        ],
+        porque: [
+            "Pernas = MELHOR conversão (32.65/10k)",
+            "ID: CeEEU2N8xFk = 128.26/10k (CAMPEÃO!)",
+            "Quinta = pré-sexta, galera quer treinar forte"
+        ],
+        referencias: [
+            {
+                tipo: "CAMPEÃO ABSOLUTO DE CONVERSÃO!",
+                id: "CeEEU2N8xFk",
+                titulo: "7 Exercícios PODEROSOS Para Ter Pernas Grossas e Definidas",
+                metricas: "128.26 inscritos/10k - NÚMERO 1 DO CANAL!",
+                estudo: "MELHOR CONVERSÃO DE TODO O CANAL: 128.26 inscritos por 10k views + Por que converteu tanto? + Estude intensamente este vídeo → REPLIQUE COM 8 EXERCÍCIOS"
+            },
+            {
+                tipo: "Alternativa",
+                id: "XgWKMkR4-5E",
+                titulo: "8 Minutos é TUDO QUE VOCÊ PRECISA Para Ter PERNAS GROSSAS EM 21 DIAS!",
+                metricas: "74.43 inscritos/10k + CTR 7.28%",
+                estudo: "Pegue o formato 'X dias'"
+            }
+        ],
+        producao: {
+            thumbnail: "Suas pernas tensionadas, 'PERNAS GROSSAS', '21 DIAS', 'BRUTAL'",
+            musica: "Pesada e intensa (ID: CeEEU2N8xFk)",
+            tags: ["pernas grossas", "pernas brutais", "hipertrofia pernas", "21 dias"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Estudei ID: CeEEU2N8xFk (128.26!)",
+            "8 exercícios brutais",
+            "'BRUTAL' no título",
+            "Quinta 18h00"
+        ]
+    },
+    {
+        id: 18,
+        data: "30/01/2026",
+        diaSemana: "SEXTA",
+        tema: "gluteos",
+        temaLabel: "GLÚTEOS",
+        titulo: "FAÇA ISSO POR 10 DIAS: 4 Exercícios Para TURBINAR Seus GLÚTEOS! 🍑 (Sem Impacto)",
+        estrutura: [
+            "4 exercícios poderosos",
+            "3 rounds de cada",
+            "Sem impacto (acessível)",
+            "Duração: 8-10 minutos"
+        ],
+        porque: [
+            "ID: Zb1SGLxCzFo = 329k views + CTR 10.75%",
+            "'FAÇA ISSO' = formato campeão",
+            "Fechar mês com tema mais popular"
+        ],
+        referencias: [
+            {
+                tipo: "VÍDEO QUASE PERFEITO (329K VIEWS!)",
+                id: "Zb1SGLxCzFo",
+                titulo: "FAÇA ISSO POR 10 DIAS: 4 Exercícios Para TURBINAR Seus GLÚTEOS Em Casa (Sem Impacto)",
+                metricas: "70.03 inscritos/10k + 329k views + CTR 10.75%",
+                estudo: "ESTE É O MODELO EXATO: 329k views provam que funciona + CTR 10.75% = thumbnail ótima + 'Sem Impacto' atrai público mais amplo → REPLIQUE ESTE VÍDEO COM MELHORIAS: ★ Mesma estrutura ★ Mesmos 4 exercícios (comprovados) ★ Thumbnail similar ★ Energia aumentada"
+            },
+            {
+                tipo: "Melhor 'FAÇA ISSO'",
+                id: "tbpXnQA2S6U",
+                titulo: "FAÇA ISSO PARA AUMENTAR SEUS GLÚTEOS EM CASA",
+                metricas: "93.37 inscritos/10k + 398k views",
+                estudo: "Compare os exercícios"
+            },
+            {
+                tipo: "Retenção",
+                id: "slhHa4RTZR0",
+                titulo: "FAÇA ISSO PELAS MANHÃS PARA PERDER BARRIGA 3X MAIS RÁPIDO",
+                metricas: "97.6% retenção",
+                estudo: "Pegue o hook inicial"
+            }
+        ],
+        producao: {
+            thumbnail: "Resultado de glúteo, 'FAÇA ISSO POR 10 DIAS', '4 EXERCÍCIOS', 🍑",
+            musica: "Motivacional (ID: Zb1SGLxCzFo)",
+            tags: ["faça isso", "10 dias", "turbinar glúteos", "sem impacto", "bumbum grande"],
+            horario: "18h00"
+        },
+        checklist: [
+            "Copiei estrutura ID: Zb1SGLxCzFo",
+            "4 exercícios sem impacto",
+            "Thumbnail com 'FAÇA ISSO'",
+            "'SEM IMPACTO' destacado",
+            "Fechar mês com CHAVE DE OURO",
+            "Sexta 18h00 - horário PEAK"
+        ]
+    }
+        ];
+
+        // Estado do aplicativo
+        let appState = {
+            videoStatus: {},
+            checklistProgress: {},
+            theme: 'dark'
+        };
+
+        // Carregar estado do localStorage
+        function loadState() {
+            const saved = localStorage.getItem('calendarioYoutube');
+            if (saved) {
+                appState = JSON.parse(saved);
+                document.body.setAttribute('data-theme', appState.theme);
+            }
+        }
+
+        // Salvar estado no localStorage
+        function saveState() {
+            localStorage.setItem('calendarioYoutube', JSON.stringify(appState));
+        }
+
+        // Toggle tema
+        function toggleTheme() {
+            appState.theme = appState.theme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', appState.theme);
+            document.querySelector('.theme-toggle').textContent = appState.theme === 'dark' ? '🌙' : '☀️';
+            saveState();
+        }
+
+        // Renderizar cards
+        function renderCards() {
+            const grid = document.getElementById('calendar-grid');
+            grid.innerHTML = '';
+
+            let filtered = calendarData;
+
+            // Aplicar filtros
+            const search = document.getElementById('search').value.toLowerCase();
+            const filterTema = document.getElementById('filter-tema').value;
+            const filterStatus = document.getElementById('filter-status').value;
+
+            if (search) {
+                filtered = filtered.filter(day => day.titulo.toLowerCase().includes(search));
+            }
+
+            if (filterTema) {
+                filtered = filtered.filter(day => day.tema === filterTema);
+            }
+
+            if (filterStatus) {
+                filtered = filtered.filter(day => {
+                    const status = appState.videoStatus[day.id] || 'nao-iniciado';
+                    return status === filterStatus;
+                });
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <p>Nenhum vídeo encontrado com esses filtros</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(day => {
+                const status = appState.videoStatus[day.id] || 'nao-iniciado';
+                const statusIcon = status === 'publicado' ? '✅' : status === 'producao' ? '📝' : '☐';
+
+                const card = document.createElement('div');
+                card.className = `day-card ${day.tema}`;
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="date-badge">${day.data.split('/')[0]} JAN - ${day.diaSemana}</div>
+                        <div class="status-icon" onclick="cycleStatus(${day.id})" data-tooltip="Alterar status">
+                            ${statusIcon}
+                        </div>
+                    </div>
+                    <div class="tema-badge">${day.temaLabel}</div>
+                    <div class="card-title">${day.titulo}</div>
+                    <div class="card-time">⏰ ${day.producao.horario}</div>
+                    <button class="btn-details" onclick="openDetails(${day.id})">Ver Detalhes Completos</button>
+                `;
+                grid.appendChild(card);
+            });
+
+            updateProgress();
+        }
+
+        // Ciclar status do vídeo
+        function cycleStatus(id) {
+            const statuses = ['nao-iniciado', 'producao', 'publicado'];
+            const current = appState.videoStatus[id] || 'nao-iniciado';
+            const currentIndex = statuses.indexOf(current);
+            const nextIndex = (currentIndex + 1) % statuses.length;
+            appState.videoStatus[id] = statuses[nextIndex];
+            saveState();
+            renderCards();
+        }
+
+        // Atualizar progresso
+        function updateProgress() {
+            const publicados = Object.values(appState.videoStatus).filter(s => s === 'publicado').length;
+            document.getElementById('progress-count').textContent = publicados;
+        }
+
+        // Abrir detalhes do dia
+        function openDetails(id) {
+            const day = calendarData.find(d => d.id === id);
+            if (!day) return;
+
+            const modal = document.getElementById('modal-details');
+            const content = modal.querySelector('.modal-content') || document.createElement('div');
+            content.className = 'modal-content';
+
+            const checklistHTML = day.checklist.map((item, index) => {
+                const isChecked = appState.checklistProgress[`${day.id}-${index}`] || false;
+                return `
+                    <li class="${isChecked ? 'checked' : ''}" onclick="toggleChecklist(${day.id}, ${index})">
+                        <input type="checkbox" ${isChecked ? 'checked' : ''} onclick="event.stopPropagation()">
+                        <span>${item}</span>
+                    </li>
+                `;
+            }).join('');
+
+            const referencesHTML = day.referencias.map(ref => `
+                <div class="reference-card" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">
+                    <div class="reference-header">
+                        <span class="reference-type">${ref.tipo}</span>
+                        <span class="reference-id">ID: ${ref.id}</span>
+                    </div>
+                    <div class="reference-title">${ref.titulo}</div>
+                    <div class="reference-metrics">📊 ${ref.metricas}</div>
+                    <div class="reference-study">📖 ${ref.estudo}</div>
+                    <a href="https://studio.youtube.com/video/${ref.id}/analytics" target="_blank" class="reference-link">
+                        Ver no YouTube Studio →
+                    </a>
+                </div>
+            `).join('');
+
+            content.innerHTML = `
+                <div class="modal-header" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'}); --theme-color-dark: var(--accent-secondary);">
+                    <button class="modal-close" onclick="closeModal('modal-details')">×</button>
+                    <h2>${day.data} (${day.diaSemana}) - ${day.temaLabel}</h2>
+                    <h3>${day.titulo}</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="section">
+                        <div class="section-title" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">📋 Estrutura do Vídeo</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            ${day.estrutura.map(item => `<li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">• ${item}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">🎯 Por Quê Este Formato</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            ${day.porque.map(item => `<li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">• ${item}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">📺 Vídeos Para Se Inspirar</div>
+                        ${referencesHTML}
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">📝 Guia de Produção</div>
+                        <div class="info-box" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">
+                            <strong>💡 Thumbnail:</strong>
+                            <p>${day.producao.thumbnail}</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">
+                            <strong>🎵 Música:</strong>
+                            <p>${day.producao.musica}</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">
+                            <strong>⏰ Horário de Publicação:</strong>
+                            <p>${day.producao.horario}</p>
+                        </div>
+                        <div class="info-box" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">
+                            <strong>📌 Tags Sugeridas:</strong>
+                            <div class="tags">
+                                ${day.producao.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title" style="--theme-color: var(--accent-${day.tema === 'pernas' ? 'blue' : day.tema === 'gluteos' ? 'purple' : day.tema === 'abdominais' ? 'green' : 'orange'});">✅ Checklist de Produção</div>
+                        <ul class="checklist">
+                            ${checklistHTML}
+                        </ul>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="copyTitulo('${day.titulo.replace(/'/g, "\\'")}')">📋 Copiar Título</button>
+                        <button onclick="copyTags(${day.id})" class="btn-copy">🏷️ Copiar Tags</button>
+                        <button onclick="markAsPublished(${day.id})" style="background: var(--accent-green);">✅ Marcar como Publicado</button>
+                    </div>
+                </div>
+            `;
+
+            modal.querySelector('.modal-content')?.remove();
+            modal.appendChild(content);
+            modal.style.display = 'block';
+        }
+
+        // Toggle checklist
+        function toggleChecklist(dayId, index) {
+            const key = `${dayId}-${index}`;
+            appState.checklistProgress[key] = !appState.checklistProgress[key];
+            saveState();
+            openDetails(dayId); // Reabrir para atualizar
+        }
+
+        // Copiar título
+        function copyTitulo(titulo) {
+            navigator.clipboard.writeText(titulo);
+            alert('✅ Título copiado!');
+        }
+
+        // Copiar tags
+        function copyTags(id) {
+            const day = calendarData.find(d => d.id === id);
+            if (day) {
+                const tags = day.producao.tags.join(', ');
+                navigator.clipboard.writeText(tags);
+                alert('✅ Tags copiadas!');
+            }
+        }
+
+        // Marcar como publicado
+        function markAsPublished(id) {
+            appState.videoStatus[id] = 'publicado';
+            saveState();
+            renderCards();
+            closeModal('modal-details');
+            alert('✅ Vídeo marcado como publicado!');
+        }
+
+        // Fechar modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Abrir análise
+        function openAnalysis() {
+            document.getElementById('modal-analysis').style.display = 'block';
+        }
+
+        // Abrir sidebar
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('open');
+        }
+
+        // Fechar sidebar
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+        }
+
+        // Filtrar cards
+        function filterCards() {
+            renderCards();
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Inicializar
+        window.onload = function() {
+            loadState();
+            renderCards();
+            if (appState.theme === 'light') {
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>
